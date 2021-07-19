@@ -8,8 +8,8 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/hello', (req, res) => {
-  res.send('<h1>Do you love Treehouse too?</h1>')
+app.get('/cards', (req, res) => {
+  res.render('card', { prompt: "Who is buriednin Grant's tomb?"})
 })
 
 app.listen(3000, () => {
