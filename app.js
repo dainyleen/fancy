@@ -2,12 +2,17 @@ const express = require('express')
 
 const app = express()
 
+app.set('view engine', 'pug')
+
 app.get('/', (req, res) => {
-  res.send('<h1>I Love Treehouse</h1>')
+  res.render('index')
 })
 
-app.get('/hello', (req, res) => {
-  res.send('<h1>Do you love Treehouse too?</h1>')
+app.get('/cards', (req, res) => {
+  res.render('card', { 
+    prompt: "Who is buriednin Grant's tomb?",
+    hint: "Think about whose tomb it is"
+  })
 })
 
 app.listen(3000, () => {
