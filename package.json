@@ -1,0 +1,23 @@
+{
+  "name": "studytime",
+  "version": "1.0.0",
+  "description": "Building a personalised flash card application using Express as the web framework and PUG as the template engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dainyleen/studyTime.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dainyleen/studyTime/issues"
+  },
+  "homepage": "https://github.com/dainyleen/studyTime#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
