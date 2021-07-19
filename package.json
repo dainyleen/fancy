@@ -2,7 +2,7 @@
   "name": "studytime",
   "version": "1.0.0",
   "description": "Building a personalised flash card application using Express as the web framework and PUG as the template engine",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
