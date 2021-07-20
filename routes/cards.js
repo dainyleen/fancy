@@ -6,12 +6,17 @@ const { cards } = data
 router.get('/', (req, res) => {
   const numberOfCards = cards.length
   const flashCardId = Math.floor(Math.random() * numberOfCards)
-  res.redirect(`/cards/${flashCardId}?side=question`)
+  res.redirect(`/cards/${flashCardId}`)
 })
 
 router.get('/:id', (req, res) => {
   const { side } = req.query
   const { id } = req.params
+
+  if (!side) {
+    res.redirect(`/cards/${id}?side=question`)
+  }
+
   const text = cards[id][side]
   const { hint } = cards[id]
 
