@@ -3,3 +3,5 @@ Building a personalised flash card application using Express as the web framewor
 
 ## Heroku Link
 https://fancy-flashcard.herokuapp.com
+
+### Tech Talk
