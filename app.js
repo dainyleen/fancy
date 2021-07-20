@@ -10,7 +10,7 @@ app.set('view engine', 'pug')
 
 app.use((req, res, next) => {
   console.log('Hello')
-  const err = new Error('Oh noes!')
+  const err = new Error('Something went wrong!')
   next()
 })
 
@@ -52,6 +52,11 @@ app.post('/hello', (req, res) => {
 app.post('/goodbye', (req, res) => {
   res.clearCookie('username')
   res.redirect('/hello')
+})
+
+app.use((err, req, res, next) => {
+  res.locals.err = err
+  res.render('error', err)
 })
 
 app.listen(3000, () => {
