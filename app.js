@@ -9,12 +9,13 @@ app.use(cookieParser())
 app.set('view engine', 'pug')
 
 app.use((req, res, next) => {
-  console.log('One')
+  console.log('Hello')
+  const err = new Error('Oh noes!')
   next()
 })
 
 app.use((req, res, next) => {
-  console.log('Two')
+  console.log(req.message)
   next()
 })
 
