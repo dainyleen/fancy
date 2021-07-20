@@ -10,7 +10,11 @@ app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
   const name = req.cookies.username 
-  res.render('index', { name })
+  if (name) {
+    res.render('index', { name })
+  } else {
+    res.redirect('/hello')
+  }
 })
 
 app.get('/cards', (req, res) => {
