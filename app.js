@@ -11,7 +11,8 @@ app.set('view engine', 'pug')
 app.use((req, res, next) => {
   console.log('Hello')
   const err = new Error('Something went wrong!')
-  next()
+  err.status = 500
+  next(err)
 })
 
 app.use((req, res, next) => {
@@ -56,6 +57,7 @@ app.post('/goodbye', (req, res) => {
 
 app.use((err, req, res, next) => {
   res.locals.err = err
+  res.status(err.status)
   res.render('error', err)
 })
 
