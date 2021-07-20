@@ -8,19 +8,7 @@ app.use(cookieParser())
 
 app.set('view engine', 'pug')
 
-app.use((req, res, next) => {
-  console.log('Hello')
-  const err = new Error('Something went wrong!')
-  err.status = 500
-  next(err)
-})
-
-app.use((req, res, next) => {
-  console.log(req.message)
-  next()
-})
-
-
+const routes = require('./routes')
 
 app.use((req, res, next) => {
   const err = new Error('Not Found')
