@@ -1,10 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const { data } = require('../data/flashCards.json')
+const { cards } = data
 
 router.get('/', (req, res) => {
   res.render('card', { 
-    prompt: "Who is buriednin Grant's tomb?",
-    hint: "Think about whose tomb it is"
+    prompt: cards[0].question,
+    hint: cards[0].hint
   })
 })
 
