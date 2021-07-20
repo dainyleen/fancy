@@ -25,7 +25,7 @@ app.get('/hello', (req, res) => {
 
 app.post('/hello', (req, res) => {
   res.cookie('username', req.body.username)
-  res.render('hello', { name: req.body.username })
+  res.redirect('/')
 })
 
 app.listen(3000, () => {
