@@ -25,7 +25,12 @@ app.get('/cards', (req, res) => {
 })
 
 app.get('/hello', (req, res) => {
-  res.render('hello')
+  const name = req.cookies.username 
+  if (name) {
+    res.redirect('/')
+  } else {
+    res.render('hello')
+  }
 })
 
 app.post('/hello', (req, res) => {
